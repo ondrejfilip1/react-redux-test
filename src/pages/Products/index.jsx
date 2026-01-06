@@ -36,7 +36,7 @@ export default function Products() {
   return (
     <>
       <ProductHeader />
-      <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-2">
+      <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 gap-2 mx-2">
         {productData.map((value, index) => (
           <ProductBox {...value} key={index} />
         ))}

@@ -26,7 +26,7 @@ export default function ProductBox(props) {
         />
         <p className="text-xl">{props.name}</p>
         <p>{props.price},-</p>
-        <Button className="mt-2" onClick={addToCart}>
+        <Button className="mt-2" onClick={addToCart} variant="outline">
           <ShoppingBasket />
           Add to Cart
         </Button>

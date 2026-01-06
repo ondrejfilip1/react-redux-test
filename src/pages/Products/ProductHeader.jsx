@@ -6,7 +6,6 @@ import {
 import { Button } from "@/components/ui/button";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { Fragment } from "react";
 import { Trash, ShoppingCart } from "lucide-react";
 import { removeProduct } from "@/store/slices/cartSlice";
 
@@ -41,20 +40,18 @@ export default function ProductHeader() {
           <DropdownMenuContent className="p-2 w-56">
             {cart && cart.length > 0 ? (
               cart.map((value, index) => (
-                <Fragment key={index}>
-                  <div className="flex justify-between">
-                    <div className="flex justify-center items-center gap-2">
-                      <Button
-                        variant={"icon"}
-                        onClick={() => removeFromCart(index)}
-                      >
-                        <Trash />
-                      </Button>
-                      {value.name}
-                    </div>
-                    <p className="my-auto">{value.price},-</p>
+                <div className="flex justify-between" key={index}>
+                  <div className="flex justify-center items-center gap-2">
+                    <Button
+                      variant={"icon"}
+                      onClick={() => removeFromCart(index)}
+                    >
+                      <Trash />
+                    </Button>
+                    {value.name}
                   </div>
-                </Fragment>
+                  <p className="my-auto">{value.price},-</p>
+                </div>
               ))
             ) : (
               <p className="text-center">Your cart is empty</p>
