@@ -48,7 +48,7 @@ export default function Profile() {
           {theme === "light" ? "Dark" : "Light"}
         </Button>
       </div>
-      <Link to="/">
+      <Link to="/home">
         <Button variant={"link"}>Home page</Button>
       </Link>
     </>
