@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "sonner";
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -7,6 +8,7 @@ export const cartSlice = createSlice({
     addProduct: (state, action) => {
       const item = action.payload;
       state.cart.push(item);
+      toast.success(`Added ${item.name} to cart.`);
     },
     removeProduct: (state, action) => {
       const index = action.payload;
