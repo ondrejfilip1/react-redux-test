@@ -16,9 +16,11 @@ export default function ProductHeader() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    let total = 0;
     cart.forEach((element) => {
-      setTotalPrice(totalPrice + element.price);
+      total += element.price;
     });
+    setTotalPrice(total);
   }, [cart]);
 
   const removeFromCart = (index) => {
@@ -31,7 +33,10 @@ export default function ProductHeader() {
         <p className="text-xl">E-Shop</p>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <Button><ShoppingCart />Košík</Button>
+            <Button>
+              <ShoppingCart />
+              Košík
+            </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent className="p-2 w-56">
             {cart && cart.length > 0 ? (
